@@ -1,0 +1,9 @@
+---
+name: test includes
+description: common variables used for testing
+
+variables:
+  service:
+    proto: http
+    host: localhost
+    port: 5000

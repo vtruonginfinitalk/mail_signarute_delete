@@ -1,0 +1,41 @@
+# Every test file has one or more tests...
+test_name: Get some fake data from the JSON placeholder API
+includes:
+  - !include common.yaml
+# ...and each test has one or more stages (e.g. an HTTP request)
+stages:
+  - name: Make sure we have the right ID
+
+    # Define the request to be made...
+    request:
+      url: "{service.proto:s}://{service.host:s}:{service.port:d}/analysis/sentiment"
+      method: GET
+
+    # ...and the expected response code and body
+    response:
+      status_code: 400
+      body:
+        status: False
+        message: 'NO_PARAM_TEXT_IN_REQUEST'
+
+---
+# Every test file has one or more tests...
+test_name: Get soffme fake data from the JSON placeholder API
+includes:
+  - !include common.yaml
+# ...and each test has one or more stages (e.g. an HTTP request)
+stages:
+  - name: Make sure we have the right ID
+
+    # Define the request to be made...
+    request:
+      url: "{service.proto:s}://{service.host:s}:{service.port:d}/analysis/sentiment"
+      method: GET
+      params:
+        text: "smallnumber"
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      body:
+        status: True

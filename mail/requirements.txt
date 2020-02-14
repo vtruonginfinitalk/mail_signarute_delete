@@ -1,0 +1,6 @@
+Flask==1.1.1
+rakutenma==0.3.3
+spacy==2.2.3
+nagisa==0.2.5
+talon==1.4.4
+MeCab==0.996.2
